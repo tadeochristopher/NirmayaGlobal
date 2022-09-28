@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="shortcut icon" href='@Url.Content( "~/Content/Imgs/Icons/HealthRate.ico" )' type="image/x-icon" media="all" />
+    @Styles.Render("~/Content/Styles/NGStyler.css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/scripts/jquery-3.3.1.js")
+</head>
+<body>
+    <div>
+        @RenderBody()
+        @Html.Partial("~/Views/Shared/_PhoneUnderConstruction.cshtml")
+    </div>
+    <div>
+        <img id="logo" src='@Url.Content( "~/Content/Imgs/Pngs/Healthrate.png" )' alt="Product of Nirmaya LLC" class="healthrateLogo" />
+    </div>
+</body>
+</html>

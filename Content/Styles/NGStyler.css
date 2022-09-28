@@ -1,0 +1,116 @@
+﻿/*@import url('NGContent.css');*/
+
+/*This will set the back image of most content divs with the image I created for...CDW*/
+body {
+    /*background: url('../../Content/Imgs/Pngs/BambooForestBG.png') #121212 fixed no-repeat;*/
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    scrollbar-face-color: #353333;
+    scrollbar-track-color: #121212;
+    scrollbar-arrow-color: #353333;
+    background-color: lightgrey;
+}
+
+/*Sets the body section and is the base for all body content styles...CDW*/
+.baseB {
+    background-color: rgba(248,248,255,0.85) !important; /*Sets the color and alpha levels...CDW*/
+    min-height: 90px;
+    /*opacity: 0.9;*/
+    font-family: 'Palatino Linotype';
+    color:floralwhite;
+    width: 50px;
+    padding: 0 0 40px 0;
+    margin-top: 165px; /*Set this if you make the Nav bar fixed to give added scroll effect...CDW*/
+}
+
+/*Sets the base header section of my site styles...CDW*/
+.baseFH {
+    background-color: #121212;
+    width: 100%;   
+}
+
+/*Sets the styles for any readable text...CDW*/
+.bodyContentPattern {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding: 40px 0 0 0;
+}
+
+.bodyContentPattern h2 { 
+    font: 700 26pt Arial, Verdana;
+    color: #121212;
+    width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.aboutContent {
+    margin-left: auto;
+    margin-right: auto;
+    width: 850px;
+    padding: 40px 0 0 0;
+}
+
+.innerContainer {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+}
+
+.bodyContentPattern p {
+    color: #353333;
+    font: 300 15pt Arial, Verdana;
+    padding: 0;
+}
+
+/*Setting the canvas styles here...CDW*/
+.wouldBeCan {
+    width: 80px !important;
+    height: 390px !important;
+    float: right !important;
+    margin-top: -195px !important;
+    margin-bottom: auto !important;
+    opacity: 0.87; /*Sets opacity alpha of the CWalker logo image right...CDW*/
+    /*border: 1px groove ghostwhite;*/
+}
+
+.wouldBeCanText {
+    width: 380px !important;
+    height: 390px !important;
+    float: right !important;
+    margin-top: -195px !important;
+    margin-bottom: auto !important;
+}
+
+.brokerMessage {
+    width: 100%;
+    height: 550px;
+    overflow: hidden;
+    padding: 5px;
+    border: 2px solid #121212;
+    background-color: #121212;
+    border-radius: 25px 25px 25px 25px; /*Change corner radius at any point in time...CDW*/
+    z-index: 999;
+    box-shadow: #353333 25px 25px inset;
+}
+
+.modernDart {
+    margin-left: auto; /* 120px 0 0 220px;*/
+    margin-right: auto;
+    margin-top: 95px;
+    width: 100%;
+    max-width: 950px;
+    min-width: 400px;
+}
+
+.magicOrder {
+    width: 500px;
+    margin-left: auto;
+    margin-right: -105px;    
+}
+/*Setting the canvas styles here...CDW*/
