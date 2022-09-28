@@ -1,0 +1,107 @@
+﻿<script type="text/javascript">
+    var canvas = document.getElementById( 'splashHomePage' );
+    var canvasText = document.getElementById('shpText');
+
+    var df = canvas.getContext('2d');
+    var df2T = canvasText.getContext('2d');
+    var renderImage = document.getElementById('logo');
+
+    var x = 65;
+    var y = 75;
+    var width = window.innerWidth;
+    var height = window.innerHeight;
+    var radius = 20;
+
+    var start_angle = 0.5 * Math.PI;
+    var end_angle = 1.75 * Math.PI;
+
+    var img = new Image();
+
+    var jQ = jQuery.noConflict();
+
+    var linearGradient = df.createLinearGradient(0, 50, 100, 50);
+    //TODO: come back to this and fill in the canvas setup for text overlay, work on completing the first page cleaning up the font clarity...CDW
+
+    linearGradient.addColorStop(0.2, "darkorange");
+    linearGradient.addColorStop(1, "red");
+    df.fillStyle = linearGradient;
+    df.fillRect(35, 20, 150, 75);
+    df.arc(x, y, radius, start_angle, end_angle, false);
+    df.font = "30px Arial";
+    df.fillStyle = "#121212"; //rgba(18,18,18,0.9) alternate for controlling the opacity...CDW
+    df.strokeText("Walker", x, y);
+    df.fillText("Walker", x, y);
+    df.lineWidth = 11;
+    df.stroke();
+
+    jQ(window).resize(function () {
+        if (window.innerWidth <= 950) {
+            //alert('hello');
+            jQ('.byWalker').css({ 'display': 'none', 'visibility': 'hidden' });
+            jQ('.copyRightInfo').css({ 'border-top': '1px solid #8f8b8b' });
+            jQ('.right-text').css({ 'float': 'none', 'display': 'inline-block', 'padding-left': '20px' });
+        }
+        else {
+            jQ('.byWalker').css({ 'display': 'inline-block', 'visibility': 'visible' });
+            jQ('.copyRightInfo').css({ 'border-top': '3px solid #8f8b8b' });
+            jQ('.right-text').css({ 'float': 'right' });
+        }
+    });
+
+
+    var canvas2 = document.getElementById('splashCenter');
+    
+    var df2 = canvas2.getContext('2d', { alpha: false });
+
+    var x2 = 50;
+    var y2 = 50;
+    var y3 = 15;
+    var x3 = 10;
+
+    var width2 = window.innerWidth;
+    var height2 = window.innerHeight;
+
+    var linearGradient2 = df2.createLinearGradient(x2, y2, 40, 250);
+    var springMsgFR = document.getElementById('welcomeMsgHome').value; //Spring message from resource string...CDW or use documment.wamform.elements[ 'Control ID Here' ].value...CDW
+
+    var maxWidth = 190;
+    var lineHeight = 15;
+
+    /*
+        Found this function on the following website: http://www.html5canvastutorials.com/tutorials/html5-canvas-wrap-text-tutorial/ Begin...CDW
+    */
+    function wrapText(context, text, x, y, maxWidth, lineHeight) {
+        var words = text.split(' ');
+        var line = '';
+
+        for ( var n = 0; n < words.length; n++ ) {
+            var testLine = line + words[n] + ' ';
+            var metrics = context.measureText( testLine );
+            var testWidth = metrics.width;
+            if ( testWidth > maxWidth && n > 0 ) {
+                context.fillText(line, x, y);
+                line = words[n] + ' ';
+                y += lineHeight;
+            }
+            else {
+                line = testLine;
+            }
+        }
+        context.fillText(line, x, y);
+    }
+    /*
+        Found this function code actions end here...CDW
+    */
+
+    linearGradient2.addColorStop( 1, "#121212" );
+    linearGradient2.addColorStop( 1, "#000000" );
+    df2.fillRect( 0, 0, width2, height2 );
+    df2.fillStyle = linearGradient2;
+
+    df2.font = "normal 12px Palatino Linotype";
+    df2.lineWidth = 2;
+    df2.fillStyle = "#F0EFEF";
+    df2.strokeStyle = "#121212";    
+
+    wrapText(df2, springMsgFR, x3, y3, maxWidth, lineHeight); //New code replaces my instance on split above...CDW
+</script>
